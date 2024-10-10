@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
                 val (sum) = calculateSum(n)
                 sumTextView.text = "Сумма: $sum"
             } else {
-                sumTextView.text = "Введите корректное значение n > 0"
+                fiveTextView.text = "Введите корректное значение n > 0"
             }
         }
     }
