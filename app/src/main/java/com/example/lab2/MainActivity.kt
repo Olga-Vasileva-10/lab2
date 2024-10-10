@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var sumTextView: TextView
     private lateinit var lastTermTextView: TextView
     private lateinit var iterationsTextView: TextView
+    private lateinit var fiveTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,13 +34,18 @@ class MainActivity : AppCompatActivity() {
         sumTextView = findViewById(R.id.textView6)
         lastTermTextView = findViewById(R.id.textView7)
         iterationsTextView = findViewById(R.id.textView8)
+        fiveTextView = findViewById(R.id.textView5)
 
         button.setOnClickListener {
             val n = editText.text.toString().toIntOrNull()
+            if (n != null && n > 0) {
 
-
+            } else {
+                fiveTextView.text = "Введите n > 0"
+            }
         }
     }
+
 }
 
 
