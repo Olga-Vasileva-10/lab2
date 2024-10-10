@@ -14,8 +14,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var editText: EditText
     private lateinit var button: Button
     private lateinit var sumTextView: TextView
-    private lateinit var lastTermTextView: TextView
-    private lateinit var iterationsTextView: TextView
     private lateinit var fiveTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
