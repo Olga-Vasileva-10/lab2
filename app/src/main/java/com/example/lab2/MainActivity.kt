@@ -32,20 +32,32 @@ class MainActivity : AppCompatActivity() {
         editText = findViewById(R.id.editTextText2)
         button = findViewById(R.id.button2)
         sumTextView = findViewById(R.id.textView6)
-        lastTermTextView = findViewById(R.id.textView7)
-        iterationsTextView = findViewById(R.id.textView8)
         fiveTextView = findViewById(R.id.textView5)
 
         button.setOnClickListener {
             val n = editText.text.toString().toIntOrNull()
             if (n != null && n > 0) {
-
+                val (sum) = calculateSum(n)
+                sumTextView.text = "Сумма: $sum"
             } else {
-                fiveTextView.text = "Введите n > 0"
+                sumTextView.text = "Введите корректное значение n > 0"
             }
         }
     }
+    private fun calculateSum(n: Int): Pair<Double, Int> {
+        var sum = 0.0
+        var iterations = 0
 
+        for (i in 1..n) {
+            sum += 1.0 / factorial(i)
+        }
+
+        return Pair(sum, iterations)
+    }
+
+    private fun factorial(n: Int): Double {
+        return if (n == 0) 1.0 else n * factorial(n - 1)
+    }
 }
 
 
